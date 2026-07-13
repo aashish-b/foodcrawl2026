@@ -80,6 +80,38 @@ const PHASES = [
     ]},
 ];
 
+/* ---------- curator sheet (optional remote control) ----------
+   A published-to-web Google Sheet CSV with columns: phase, id, name, show.
+   Rows with show=yes keep that option visible in its reveal; a phase with
+   zero yes-rows (or an unreachable sheet) falls back to the full pool.   */
+const SHEET_CSV_URL = "";
+let sheetConfig = null;
+async function pollSheet() {
+  if (!SHEET_CSV_URL) return;
+  try {
+    const txt = await (await fetch(SHEET_CSV_URL, { cache: "no-store" })).text();
+    const cfg = {};
+    txt.split(/\r?\n/).forEach(line => {
+      const cells = line.split(",").map(s => s.replace(/^"|"$/g, "").trim().toLowerCase());
+      if (cells.length < 3) return;
+      const [phase, id] = cells, show = cells[cells.length - 1];
+      if (!["lunch", "predinner", "dinner"].includes(phase)) return;
+      cfg[phase] = cfg[phase] || new Set();
+      if (["yes", "y", "true"].includes(show)) cfg[phase].add(id);
+    });
+    const changed = JSON.stringify(dumpCfg(cfg)) !== JSON.stringify(dumpCfg(sheetConfig));
+    sheetConfig = cfg;
+    if (changed) refresh({ keepScroll: true });
+  } catch (e) { /* offline or sheet hiccup — keep last known config */ }
+}
+const dumpCfg = c => c ? Object.fromEntries(Object.entries(c).map(([k, v]) => [k, [...v].sort()])) : null;
+function activeOptions(ph) {
+  const chosen = sheetConfig && sheetConfig[ph.key];
+  if (!chosen || !chosen.size) return ph.options;
+  const kept = ph.options.filter(o => chosen.has(o.id));
+  return kept.length ? kept : ph.options;
+}
+
 const CAT_ICON = { cafe: "☕", bakery: "🥐", sweets: "🍧", food: "🍜", bar: "🍸" };
 const CAT_NAME = { cafe: "café", bakery: "bakery", sweets: "sweets", food: "restaurant", bar: "bar" };
 
@@ -171,7 +203,7 @@ function renderItinerary() {
       <div class="stop-label"><span>${revealed ? esc(ph.label) : `stop ${["one","two","three","four","five"][ph.num-1]} · ???`}</span>
         <span class="when">${revealed ? ph.when : ""}</span></div>`;
     if (!revealed) return head + `<div class="card sealed">🕯 ${esc(ph.teaser)}</div>`;
-    return head + ph.options.map(o => optionCard(ph, o, newlyRevealed)).join("");
+    return head + activeOptions(ph).map(o => optionCard(ph, o, newlyRevealed)).join("");
   }).join("");
   $("#itinerary").innerHTML = html;
   lastRevealedKeys = new Set(PHASES.filter(phaseRevealed).map(ph => ph.key));
@@ -250,7 +282,7 @@ function drawRoute() {
   const cur = currentPhase();
   const last = trail.at(-1);
   if (cur && last) {
-    cur.options.filter(o => !state.visited[o.id]).forEach(o => {
+    activeOptions(cur).filter(o => !state.visited[o.id]).forEach(o => {
       const p = byId[o.id];
       L.polyline([[last.lat, last.lng], [p.lat, p.lng]],
         { color: "#c96f4a", weight: 4, opacity: .8, className: "route-path" }).addTo(routeLayer);
@@ -259,7 +291,7 @@ function drawRoute() {
 
   // pins for revealed phases only — no spoilers
   PHASES.filter(phaseRevealed).forEach(ph => {
-    ph.options.forEach(o => {
+    activeOptions(ph).forEach(o => {
       const p = byId[o.id];
       const done = !!state.visited[o.id];
       bounds.push([p.lat, p.lng]);
@@ -335,6 +367,7 @@ function refresh(opts = {}) {
 }
 drawCollection();
 refresh();
+pollSheet();
 window.addEventListener("load", () => map.invalidateSize());
-// flip stamp buttons open on their own once a gate time passes
-setInterval(() => refresh({ keepScroll: true }), 60000);
+// re-check the clock gates and the curator sheet once a minute
+setInterval(() => { refresh({ keepScroll: true }); pollSheet(); }, 60000);
