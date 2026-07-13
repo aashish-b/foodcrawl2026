@@ -1,0 +1,818 @@
+[
+ {
+  "name": "Contrada",
+  "lat": 43.6555418,
+  "lng": -79.4114981,
+  "matched": "Contrada, 537, College Street, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1A8, Canada"
+ },
+ {
+  "name": "Harbord Bakery",
+  "lat": 43.6624719,
+  "lng": -79.4044695,
+  "matched": "Harbord Bakery & Calandria, 115, Harbord Street, University, Downtown, Toronto, Golden Horseshoe, Ontario, M5S 1G8, Canada"
+ },
+ {
+  "name": "Sleepy Pete's",
+  "lat": 43.6543709,
+  "lng": -79.4004479,
+  "matched": "Sleepy Pete's, Kensington Avenue, Kensington Market, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 2J9, Canada"
+ },
+ {
+  "name": "DaiLo",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Little Sister Dutch Indonesian",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Kiin",
+  "lat": 43.7096395,
+  "lng": -79.5649728,
+  "matched": "Kiin Fashion, Bethridge Road, West Humber-Clairville, Etobicoke North, Etobicoke, Toronto, Golden Horseshoe, Ontario, M9W 1C8, Canada"
+ },
+ {
+  "name": "The Morning After",
+  "lat": 43.6401329,
+  "lng": -79.3972398,
+  "matched": "The Morning After, 88, Fort York Boulevard, Harbourfront-CityPlace, Downtown, Toronto, Golden Horseshoe, Ontario, M5N 3Z3, Canada"
+ },
+ {
+  "name": "Banh Mi Nguyen Huong",
+  "lat": 43.6536639,
+  "lng": -79.398642,
+  "matched": "Bánh Mì Nguyên Hương, 322, Spadina Avenue, Kensington Market, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 2E7, Canada"
+ },
+ {
+  "name": "Homemade Ramen",
+  "lat": 43.6523918,
+  "lng": -79.3975034,
+  "matched": "Homemade Ramen, 263, Spadina Avenue, Kensington-Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 2E4, Canada"
+ },
+ {
+  "name": "Machida Shoten (College St)",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Konia Kitchen and Bar",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Aura",
+  "lat": 43.6594044,
+  "lng": -79.3828199,
+  "matched": "Aura, Gerrard Street West, Yonge-Bay Corridor, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M5B 0A5, Canada"
+ },
+ {
+  "name": "Black Camel",
+  "lat": 43.6771177,
+  "lng": -79.3893703,
+  "matched": "Black Camel, 4, Crescent Road, Rosedale-Moore Park, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M4W 2K9, Canada"
+ },
+ {
+  "name": "Krave Coffee",
+  "lat": 43.6807784,
+  "lng": -79.4292708,
+  "matched": "Krave Coffee, 781, St. Clair Avenue West, Wychwood, Toronto—St. Paul's, Toronto, Golden Horseshoe, Ontario, M6C 1B7, Canada"
+ },
+ {
+  "name": "Maven Toronto",
+  "lat": 43.662855,
+  "lng": -79.4037461,
+  "matched": "Maven Toronto, 112, Harbord Street, University, Downtown, Toronto, Golden Horseshoe, Ontario, M5S 1G8, Canada"
+ },
+ {
+  "name": "Tre Mari Bakery",
+  "lat": 43.6765099,
+  "lng": -79.4486825,
+  "matched": "Tre Mari Bakery, 1311, St. Clair Avenue West, Corso Italia-Davenport, Davenport, Toronto, Golden Horseshoe, Ontario, M6E 1C2, Canada"
+ },
+ {
+  "name": "Flora Lounge",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Fahrenheit Coffee",
+  "lat": 43.646942,
+  "lng": -79.4006862,
+  "matched": "Fahrenheit Coffee, 529, Richmond Street West, Wellington Place, Downtown, Toronto, Golden Horseshoe, Ontario, M5V 2B6, Canada"
+ },
+ {
+  "name": "The Local",
+  "lat": 43.6509912,
+  "lng": -79.4510145,
+  "matched": "The Local, 396, Roncesvalles Avenue, High Park, High Park-Swansea, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6R 2M9, Canada"
+ },
+ {
+  "name": "MACHINO DONUTS",
+  "lat": 43.6562876,
+  "lng": -79.4533858,
+  "matched": "Machino Donuts, 1556, Bloor Street West, High Park North, High Park-Swansea, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6P 1A4, Canada"
+ },
+ {
+  "name": "Cocktail Bar",
+  "lat": 43.6639407,
+  "lng": -79.368879,
+  "matched": "Zero Cocktail Bar, 223, Carlton Street, Moss Park, Downtown, Toronto, Golden Horseshoe, Ontario, M5A 2L2, Canada"
+ },
+ {
+  "name": "Soul Chocolate",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Kasa Moto",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Signatures Restaurant",
+  "lat": 43.7943528,
+  "lng": -79.3538511,
+  "matched": "Deer Garden Signatures, Skymark Drive, Hillcrest Village, Don Valley North, North York, Toronto, Golden Horseshoe, Ontario, M2J 4X9, Canada"
+ },
+ {
+  "name": "Black wolf coffee",
+  "lat": 43.6590261,
+  "lng": -79.384827,
+  "matched": "Black Wolf Coffee, 717, Bay Street, Yonge-Bay Corridor, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M5G 2J9, Canada"
+ },
+ {
+  "name": "Baker and Scone",
+  "lat": 43.6814414,
+  "lng": -79.4260574,
+  "matched": "Baker and Scone, 693, St. Clair Avenue West, Wychwood, Toronto—St. Paul's, Toronto, Golden Horseshoe, Ontario, M6C 1B1, Canada"
+ },
+ {
+  "name": "Ethica Coffee Roasters",
+  "lat": 43.6553122,
+  "lng": -79.4453495,
+  "matched": "Ethica coffee roasters, 213, Sterling Road, Junction Triangle, Davenport, Toronto, Golden Horseshoe, Ontario, M6R 2B2, Canada"
+ },
+ {
+  "name": "Alder",
+  "lat": 43.7023602,
+  "lng": -79.326997,
+  "matched": "Alder Road, O'Connor-Parkview, Beaches—East York, East York, Toronto, Golden Horseshoe, Ontario, M4C 2Z7, Canada"
+ },
+ {
+  "name": "Renaissance Detroit Style Pizza",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Convivium Dining Community",
+  "lat": 43.6496249,
+  "lng": -79.3779095,
+  "matched": "Convivium Dining Community, Yonge Street, Downtown Yonge East, Toronto Centre, Toronto, Golden Horseshoe, Ontario, M5C 2Y6, Canada"
+ },
+ {
+  "name": "El Pocho Antojitos Bar",
+  "lat": 43.6695936,
+  "lng": -79.4133628,
+  "matched": "El Pocho Antojitos Bar, 2, Follis Avenue, Annex, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 2R4, Canada"
+ },
+ {
+  "name": "The Black Canary Espresso Bar (Sherbourne)",
+  "lat": 43.6518751,
+  "lng": -79.3683156,
+  "matched": "The Black Canary Espresso Bar, 61, Sherbourne Street, Moss Park, Downtown, Toronto, Golden Horseshoe, Ontario, M5A 1J7, Canada"
+ },
+ {
+  "name": "Monte Bianco Italian Cuisine and Pizzeria",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "The Wren",
+  "lat": 43.6825516,
+  "lng": -79.3280972,
+  "matched": "The Wren, Danforth Avenue, Danforth, Toronto—Danforth, East York, Toronto, Golden Horseshoe, Ontario, M1J 1E7, Canada"
+ },
+ {
+  "name": "Forno Cultura",
+  "lat": 43.648542,
+  "lng": -79.3823769,
+  "matched": "Forno Cultura, PATH Main Route, Financial District, Spadina—Fort York, Toronto, Golden Horseshoe, Ontario, M5X 1E1, Canada"
+ },
+ {
+  "name": "Sugo",
+  "lat": 43.6583037,
+  "lng": -79.4423257,
+  "matched": "Sugo, 1279-1281, Bloor Street West, Wallace Emerson, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1N7, Canada"
+ },
+ {
+  "name": "Carmelitas Restaurant",
+  "lat": 43.6655732,
+  "lng": -79.4689205,
+  "matched": "Carmelitas, 2982, Dundas Street West, Junction Area, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6P 1Z3, Canada"
+ },
+ {
+  "name": "Souper Hot Pot",
+  "lat": 43.7638664,
+  "lng": -79.4112952,
+  "matched": "SOUPER Hot Pot & Tea, 4899, Yonge Street, Yonge-Doris, Willowdale, North York, Toronto, Golden Horseshoe, Ontario, M2N 5N4, Canada"
+ },
+ {
+  "name": "Casa Madera",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Get Well",
+  "lat": 43.6492509,
+  "lng": -79.4219201,
+  "matched": "Get Well, 1181, Dundas Street West, Trinity-Bellwoods, Spadina—Fort York, Toronto, Golden Horseshoe, Ontario, M6H 1Y3, Canada"
+ },
+ {
+  "name": "Pizzeria Defina",
+  "lat": 43.6487072,
+  "lng": -79.4497996,
+  "matched": "Pizzeria Defina, 321, Roncesvalles Avenue, High Park, High Park-Swansea, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6R 2M6, Canada"
+ },
+ {
+  "name": "Boxcar Social Laneway",
+  "lat": 43.6556233,
+  "lng": -79.4093155,
+  "matched": "Boxcar Social Laneway, 298, Markham Street, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6J 2G6, Canada"
+ },
+ {
+  "name": "Bar Pompette",
+  "lat": 43.6550038,
+  "lng": -79.4143522,
+  "matched": "Bar Pompette, 607, College Street, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1B5, Canada"
+ },
+ {
+  "name": "Quanto Basta Restaurant",
+  "lat": 43.6787501,
+  "lng": -79.3904234,
+  "matched": "Quanto Basta, Yonge Street, Rosedale-Moore Park, Downtown, Toronto, Golden Horseshoe, Ontario, M4W 2L2, Canada"
+ },
+ {
+  "name": "The Maker Bean Cafe",
+  "lat": 43.6605783,
+  "lng": -79.4324486,
+  "matched": "The Maker Bean Café, 1052, Bloor Street West, Dovercourt Village, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1M3, Canada"
+ },
+ {
+  "name": "BKookies Cafe",
+  "lat": 43.6552385,
+  "lng": -79.4131556,
+  "matched": "BKookies, 579, College Street, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1B2, Canada"
+ },
+ {
+  "name": "Issho Bakery",
+  "lat": 43.6654364,
+  "lng": -79.3522327,
+  "matched": "Issho Bakery, 583, Gerrard Street East, South Riverdale, Toronto—Danforth, Toronto, Golden Horseshoe, Ontario, M4M 1Y2, Canada"
+ },
+ {
+  "name": "Nabulu Coffee",
+  "lat": 43.666102,
+  "lng": -79.3856225,
+  "matched": "Nabulu Coffee, 6, St. Joseph Street, Bay-Cloverhill, Toronto Centre, Toronto, Golden Horseshoe, Ontario, M4Y 1J7, Canada"
+ },
+ {
+  "name": "Le Gourmand",
+  "lat": 43.6482511,
+  "lng": -79.3964546,
+  "matched": "Le Gourmand, 152, Spadina Avenue, Wellington Place, Downtown, Toronto, Golden Horseshoe, Ontario, M5V 2B1, Canada"
+ },
+ {
+  "name": "Som Tum Jinda",
+  "lat": 43.6600607,
+  "lng": -79.3781677,
+  "matched": "Som Tum Jinda, 76, Gerrard Street East, Downtown Yonge East, Toronto Centre, Toronto, Golden Horseshoe, Ontario, M5G 2A7, Canada"
+ },
+ {
+  "name": "Savor Thai Toronto",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Pho Linh",
+  "lat": 43.6523919,
+  "lng": -79.4341419,
+  "matched": "Pho Linh, 1156, College Street, Little Portugal, Davenport, Toronto, Golden Horseshoe, Ontario, M6K 3C7, Canada"
+ },
+ {
+  "name": "Tiny Market Co",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "gram's pizza",
+  "lat": 43.6650725,
+  "lng": -79.4557376,
+  "matched": "Gram's Pizza, 1640, Dupont Street, Junction Triangle, Davenport, Toronto, Golden Horseshoe, Ontario, M6P 3T2, Canada"
+ },
+ {
+  "name": "Cafe Polonez",
+  "lat": 43.6451197,
+  "lng": -79.4484135,
+  "matched": "Café Polonez, 195, Roncesvalles Avenue, Parkdale, High Park-Swansea, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6R 2L5, Canada"
+ },
+ {
+  "name": "Writers Room Bar",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "ALMA+GIL",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "FIKA Cafe",
+  "lat": 43.6535356,
+  "lng": -79.4004052,
+  "matched": "Fika Cafe, 28, Kensington Avenue, Kensington Market, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 2J9, Canada"
+ },
+ {
+  "name": "La Salumeria",
+  "lat": 43.701325,
+  "lng": -79.397018,
+  "matched": "La Salumeria Delicatessen, 2021, Yonge Street, South Eglinton-Davisville, Toronto—St. Paul's, Toronto, Golden Horseshoe, Ontario, M4S 1Z9, Canada"
+ },
+ {
+  "name": "PROJECT GIGGLEWATER",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Bar Vendetta",
+  "lat": 43.6509477,
+  "lng": -79.4132505,
+  "matched": "bar vendetta, 928, Dundas Street West, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6J 1W3, Canada"
+ },
+ {
+  "name": "Grey Tiger",
+  "lat": 43.6594652,
+  "lng": -79.4379209,
+  "matched": "Grey Tiger, 1190, Bloor Street West, Wallace Emerson, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1N2, Canada"
+ },
+ {
+  "name": "R&D",
+  "lat": 43.6515083,
+  "lng": -79.3971185,
+  "matched": "R&D, 241, Spadina Avenue, Kensington-Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 3A8, Canada"
+ },
+ {
+  "name": "Aera",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Moments",
+  "lat": 43.7196146,
+  "lng": -79.5996161,
+  "matched": "Moments, 500, Rexdale Boulevard, West Humber-Clairville, Etobicoke North, Etobicoke, Toronto, Golden Horseshoe, Ontario, M9W 6K5, Canada"
+ },
+ {
+  "name": "Hastings Snack Bar",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Viet Chay Vegan Cuisine",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Bloom Cafe",
+  "lat": 43.6655017,
+  "lng": -79.3849614,
+  "matched": "Bloom Cafe, 596, Yonge Street, Church-Wellesley, Toronto Centre, Toronto, Golden Horseshoe, Ontario, M4Y 1Z2, Canada"
+ },
+ {
+  "name": "NEW RETRO - BASEMENT BAR",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Cabin Fever",
+  "lat": 43.655288,
+  "lng": -79.4565903,
+  "matched": "Cabin Fever Collective, 1669, Bloor Street West, High Park North, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6P 1A6, Canada"
+ },
+ {
+  "name": "Noctua Bakery",
+  "lat": 43.6655862,
+  "lng": -79.4698284,
+  "matched": "Noctua Bakery, 3014, Dundas Street West, Junction Area, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6P 1Z3, Canada"
+ },
+ {
+  "name": "Pukka",
+  "lat": 43.6811349,
+  "lng": -79.4292268,
+  "matched": "Pukka, 778, St. Clair Avenue West, Wychwood, Toronto—St. Paul's, Toronto, Golden Horseshoe, Ontario, M6C 2X5, Canada"
+ },
+ {
+  "name": "Hey Noodles",
+  "lat": 43.6532962,
+  "lng": -79.3969727,
+  "matched": "Hey Noodles, Dundas Street West, Kensington-Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 1G7, Canada"
+ },
+ {
+  "name": "Comal y Canela",
+  "lat": 43.7032821,
+  "lng": -79.5041655,
+  "matched": "Comal Y Canela, 1692B, Jane Street, Weston, York South—Weston, York, North York, Toronto, Golden Horseshoe, Ontario, M9N 2S4, Canada"
+ },
+ {
+  "name": "Death In Venice Gelato",
+  "lat": 43.6497102,
+  "lng": -79.4293056,
+  "matched": "Death in Venice, 1418, Dundas Street West, Little Portugal, Davenport, Toronto, Golden Horseshoe, Ontario, M6J 1Y5, Canada"
+ },
+ {
+  "name": "Bricolage Bakery",
+  "lat": 43.6532186,
+  "lng": -79.4276938,
+  "matched": "Bricolage Bakery, 981, College Street, Little Portugal, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1A5, Canada"
+ },
+ {
+  "name": "Balam Toronto",
+  "lat": 43.6604943,
+  "lng": -79.4437547,
+  "matched": "Balam Toronto, 584, Lansdowne Avenue, Wallace Emerson, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1P6, Canada"
+ },
+ {
+  "name": "Viaggio",
+  "lat": 43.6499795,
+  "lng": -79.4390201,
+  "matched": "Viaggio, 1727, Dundas Street West, Little Portugal, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1C5, Canada"
+ },
+ {
+  "name": "Lokum Eats - Food by Tradition",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Barbershop Patisserie",
+  "lat": 43.6540842,
+  "lng": -79.4234712,
+  "matched": "Barbershop patisserie, College Street, Trinity-Bellwoods, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1A1, Canada"
+ },
+ {
+  "name": "Schmaltz Appetizing",
+  "lat": 43.6739749,
+  "lng": -79.4118022,
+  "matched": "Schmaltz Appetizing, 414, Dupont Street, Annex, Downtown, Toronto, Golden Horseshoe, Ontario, M5R 3B6, Canada"
+ },
+ {
+  "name": "Chilliy Pepper TACOS",
+  "lat": 43.6757082,
+  "lng": -79.4036267,
+  "matched": "Chilliy Pepper Tacos, 176, Dupont Street, Annex, Downtown, Toronto, Golden Horseshoe, Ontario, M5R 2E6, Canada"
+ },
+ {
+  "name": "Mattachioni",
+  "lat": 43.6648627,
+  "lng": -79.4548976,
+  "matched": "Mattachioni, 1617, Dupont Street, Junction Triangle, Davenport, Toronto, Golden Horseshoe, Ontario, M6P 3S5, Canada"
+ },
+ {
+  "name": "Pizzeria Badiali",
+  "lat": 43.6637707,
+  "lng": -79.4117587,
+  "matched": "Pizzeria Badiali, Lennox Street, Palmerston-Little Italy, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M5S 2R4, Canada"
+ },
+ {
+  "name": "Casamiento",
+  "lat": 43.6705664,
+  "lng": -79.4260291,
+  "matched": "Casamiento, 787, Dupont Street, Dovercourt Village, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1Z5, Canada"
+ },
+ {
+  "name": "Bar Poet",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Buvette Pacey",
+  "lat": 43.6549581,
+  "lng": -79.3654432,
+  "matched": "Buvette Pacey, 141, Berkeley Street, Moss Park, Downtown, Toronto, Golden Horseshoe, Ontario, M5A 2X1, Canada"
+ },
+ {
+  "name": "The Epicure Shop",
+  "lat": 43.6640329,
+  "lng": -79.3676836,
+  "matched": "The Epicure Shop, 473, Parliament Street, Cabbagetown-South St.James Town, Downtown, Toronto, Golden Horseshoe, Ontario, M5A 3A3, Canada"
+ },
+ {
+  "name": "Tabule Middle Eastern Cuisine",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "SUPERNOVA Coffee",
+  "lat": 43.6808641,
+  "lng": -79.3575804,
+  "matched": "SUPERNOVA Coffee, 897, Broadview Avenue, Playter Estates-Danforth, Toronto—Danforth, Toronto, Golden Horseshoe, Ontario, M4K 2P9, Canada"
+ },
+ {
+  "name": "Miznon",
+  "lat": 43.6704691,
+  "lng": -79.3896094,
+  "matched": "Miznon, Cumberland Terrace Ground Floor, Annex, Downtown, Toronto, Golden Horseshoe, Ontario, M4W 1J5, Canada"
+ },
+ {
+  "name": "Avelo Restaurant",
+  "lat": 43.6670287,
+  "lng": -79.3862661,
+  "matched": "Avelo, 51, St Nicholas Street, Bay-Cloverhill, Toronto Centre, Toronto, Golden Horseshoe, Ontario, M4Y 1W6, Canada"
+ },
+ {
+  "name": "The Mugshot Tavern",
+  "lat": 43.6546369,
+  "lng": -79.4596128,
+  "matched": "The Mugshot Tavern, 1729, Bloor Street West, High Park North, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6P 1B2, Canada"
+ },
+ {
+  "name": "Acute Pizzeria",
+  "lat": 43.6500281,
+  "lng": -79.4395236,
+  "matched": "Acute Pizzeria, 1745, Dundas Street West, Little Portugal, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1C5, Canada"
+ },
+ {
+  "name": "Koh Lipe Thai Kitchen",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Raku",
+  "lat": 43.6482298,
+  "lng": -79.399458,
+  "matched": "Raku, 456, Queen Street West, Kensington-Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5V 2A8, Canada"
+ },
+ {
+  "name": "Bar Reyna",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Purple Penguin Cafe",
+  "lat": 43.6604252,
+  "lng": -79.3422613,
+  "matched": "Purple Penguin Cafe, 889, Queen Street East, South Riverdale, Toronto—Danforth, Toronto, Golden Horseshoe, Ontario, M4M 1J2, Canada"
+ },
+ {
+  "name": "Anh Dao Restaurant",
+  "lat": 43.656299,
+  "lng": -79.3990883,
+  "matched": "Anh Dao, 383, Spadina Avenue, Kensington-Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 2G6, Canada"
+ },
+ {
+  "name": "Vit Beo",
+  "lat": 43.6623818,
+  "lng": -79.4243791,
+  "matched": "Vịt Béo, Bloor Street West, Dovercourt Village, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1M3, Canada"
+ },
+ {
+  "name": "Enoteca Sociale",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Kream Dessert",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Tenon Vegan Sushi",
+  "lat": 43.6655867,
+  "lng": -79.4096312,
+  "matched": "Tenon Vegan Sushi, 486, Bloor Street West, Annex, Downtown, Toronto, Golden Horseshoe, Ontario, M5S 1X8, Canada"
+ },
+ {
+  "name": "Rorschach Brewing Co.",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Fleur du Jour",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Snack Bar",
+  "lat": 43.6874604,
+  "lng": -79.4386501,
+  "matched": "Edmundo Snack-Bar, 367, Oakwood Avenue, Oakwood Village, Toronto—St. Paul's, York, Toronto, Golden Horseshoe, Ontario, M6E 2W3, Canada"
+ },
+ {
+  "name": "Bar Isabel",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Buk Chang Dong Soon Tofu",
+  "lat": 43.6637464,
+  "lng": -79.4169987,
+  "matched": "Buk Chang Dong Soon Tofu, 691, Bloor Street West, Palmerston-Little Italy, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1L3, Canada"
+ },
+ {
+  "name": "Richmond Station",
+  "lat": 43.6514803,
+  "lng": -79.3795117,
+  "matched": "Richmond Station, Richmond Street West, Financial District, Toronto Centre, Toronto, Golden Horseshoe, Ontario, M5C 2L7, Canada"
+ },
+ {
+  "name": "Moss Park Espresso",
+  "lat": 43.6540012,
+  "lng": -79.3712759,
+  "matched": "Moss Park Espresso, Queen Street East, Moss Park, Downtown, Toronto, Golden Horseshoe, Ontario, M5A 1S6, Canada"
+ },
+ {
+  "name": "Liu Loqum Atelier",
+  "lat": 43.6556091,
+  "lng": -79.4111557,
+  "matched": "Liu Loqum Atelier, College Street, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1A8, Canada"
+ },
+ {
+  "name": "Buno Coffee",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "ICHA TEA",
+  "lat": 43.6514239,
+  "lng": -79.3970383,
+  "matched": "Icha Tea, 235, Spadina Avenue, Kensington-Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 3A8, Canada"
+ },
+ {
+  "name": "Soos",
+  "lat": 43.6462689,
+  "lng": -79.4197309,
+  "matched": "Soos, 94, Ossington Avenue, Trinity-Bellwoods, Spadina—Fort York, Toronto, Golden Horseshoe, Ontario, M6J 2Z2, Canada"
+ },
+ {
+  "name": "Thairoom College",
+  "lat": 43.6550437,
+  "lng": -79.4185815,
+  "matched": "thairoom, 719, College Street, Trinity-Bellwoods, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1B9, Canada"
+ },
+ {
+  "name": "Gonzo Izakaya",
+  "lat": 43.6536846,
+  "lng": -79.4265965,
+  "matched": "Gonzo Izakaya, 940, College Street, Dufferin Grove, Davenport, Toronto, Golden Horseshoe, Ontario, M6H 1A6, Canada"
+ },
+ {
+  "name": "Ruru Baked",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "The Nutrition Bar...protein shakes, smoothies, Juices",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Short Turn",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "El Rey Mezcal Bar",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Harry and Heels California Donuts",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Bad Attitude Bread",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Kyouka Ramen",
+  "lat": 43.6726491,
+  "lng": -79.2882364,
+  "matched": "Kyouka Ramen, 2222, Queen Street East, The Beaches, Beaches—East York, Toronto, Golden Horseshoe, Ontario, M4E 1E9, Canada"
+ },
+ {
+  "name": "Left Field Brewery",
+  "lat": 43.6388607,
+  "lng": -79.4199324,
+  "matched": "Left Field Brewery, Hanna Avenue, Fort York-Liberty Village, Spadina—Fort York, Toronto, Golden Horseshoe, Ontario, M6K 3N7, Canada"
+ },
+ {
+  "name": "Saigon Lotus",
+  "lat": 43.6543978,
+  "lng": -79.3992829,
+  "matched": "Saigon Lotus, 6, St. Andrew Street, Kensington Market, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 1K6, Canada"
+ },
+ {
+  "name": "Gushi (Gerrard E x Parliament)",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Elm Street Italian Deli",
+  "lat": 43.6575755,
+  "lng": -79.3824743,
+  "matched": "Elm Street Italian Deli, 15, Elm Street, Yonge-Bay Corridor, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M5G 1G7, Canada"
+ },
+ {
+  "name": "Bevy",
+  "lat": 43.6615049,
+  "lng": -79.3572878,
+  "matched": "Bevy, 738, Dundas Street East, Regent Park, Downtown, Toronto, Golden Horseshoe, Ontario, M4M 1L9, Canada"
+ },
+ {
+  "name": "The Bagel House",
+  "lat": 43.6873045,
+  "lng": -79.3939613,
+  "matched": "The Bagel House, 1438, Yonge Street, Deer Park, Toronto—St. Paul's, Toronto, Golden Horseshoe, Ontario, M4T 1Y9, Canada"
+ },
+ {
+  "name": "Lait Night",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Forget Me Not Cafe",
+  "lat": 43.6457733,
+  "lng": -79.4008126,
+  "matched": "Forget Me Not Cafe, 506, Adelaide Street West, Wellington Place, Downtown, Toronto, Golden Horseshoe, Ontario, M5V 2N2, Canada"
+ },
+ {
+  "name": "Momo Ghar",
+  "lat": 43.649896,
+  "lng": -79.4826622,
+  "matched": "Momo Ghar, 2392, Bloor Street West, Runnymede-Bloor West Village, High Park-Swansea, Parkdale—High Park, Toronto, Golden Horseshoe, Ontario, M6S 1P5, Canada"
+ },
+ {
+  "name": "Descendant Detroit Style Pizza",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Civil Liberties",
+  "lat": 43.6622195,
+  "lng": -79.4252129,
+  "matched": "Civil Liberties, 878, Bloor Street West, Dovercourt Village, University—Rosedale, Toronto, Golden Horseshoe, Ontario, M6G 1M4, Canada"
+ },
+ {
+  "name": "Wasted Youth Bar",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ },
+ {
+  "name": "Tsuchi Cafe",
+  "lat": null,
+  "lng": null,
+  "matched": null
+ }
+]

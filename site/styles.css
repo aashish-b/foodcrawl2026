@@ -1,0 +1,125 @@
+/* ── Sunlit Ghibli · Toronto Food Crawl ─────────────────────────── */
+:root{
+  --paper:#faf3e3; --card:#fffdf6; --ink:#4a3f35; --ink-soft:#7c6d5b;
+  --muted:#a08c72; --leaf:#7da87b; --leaf-deep:#5c8462; --sky:#a8cfe0;
+  --peach:#f2b28c; --peach-deep:#c96f4a; --sun:#f6d55c; --plum:#9c5a8a;
+  --shadow:4px 5px 0 rgba(74,63,53,.13);
+}
+*{margin:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:Georgia,'Times New Roman',serif;color:var(--ink);
+  background:
+    radial-gradient(ellipse 80% 40% at 20% -5%, #fdf9ee 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 90% 8%, #eef6f9 0%, transparent 70%),
+    var(--paper);
+  min-height:100vh;
+  padding:calc(18px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));
+  max-width:640px;margin:0 auto;
+}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:var(--peach-deep)}
+
+/* ── header ── */
+.cloud{position:fixed;top:4%;left:-12%;font-size:42px;opacity:.45;pointer-events:none;z-index:0;animation:drift 70s linear infinite}
+.cloud.two{top:11%;font-size:26px;animation-duration:105s;animation-delay:-40s}
+@keyframes drift{to{transform:translateX(125vw)}}
+header{text-align:center;margin-bottom:10px;position:relative;z-index:1}
+.kicker{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(30px,9vw,38px);font-weight:normal;font-style:italic;margin:6px 0 2px}
+h1 .accent{color:var(--peach-deep)}
+.sub{font-size:14px;color:#8a7a66}
+
+/* crew of four */
+.crew{display:flex;justify-content:center;gap:6px;margin:14px 0 4px}
+.crew svg{width:34px;height:34px}
+.crew.cheer svg{animation:hop .55s ease}
+.crew svg:nth-child(2){animation-delay:.07s}.crew svg:nth-child(3){animation-delay:.14s}.crew svg:nth-child(4){animation-delay:.21s}
+@keyframes hop{35%{transform:translateY(-9px) rotate(-5deg)}70%{transform:translateY(0) rotate(3deg)}}
+
+/* stamp progress */
+.stamps{display:flex;justify-content:center;align-items:center;gap:8px;margin:10px 0 4px}
+.stamp-dot{width:26px;height:26px;border-radius:50% 46% 52% 48%;border:2px solid var(--ink);
+  display:flex;align-items:center;justify-content:center;font-size:13px;background:var(--card);color:transparent;
+  transition:background .3s,color .3s;transform:rotate(-4deg)}
+.stamp-dot:nth-child(2n){transform:rotate(5deg)}
+.stamp-dot.done{background:var(--sun);color:var(--ink)}
+.stamps-label{font-size:12.5px;font-style:italic;color:var(--muted);text-align:center;margin-bottom:6px}
+
+/* ── section headings ── */
+.stop-label{display:flex;align-items:center;gap:10px;margin:26px 0 10px;
+  font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:#8f9f77}
+.stop-label::after{content:"";flex:1;border-top:2px dotted #cbbfa8}
+.stop-label .when{color:var(--muted);letter-spacing:.05em;text-transform:none;font-style:italic}
+h2{font-size:22px;font-weight:normal;font-style:italic;margin:34px 0 4px}
+.section-sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;line-height:1.5}
+
+/* ── cards ── */
+.card{background:var(--card);border:2px solid var(--ink);border-radius:18px 22px 16px 24px;
+  padding:14px 16px;margin-bottom:12px;position:relative;box-shadow:var(--shadow)}
+.card.alt{opacity:.9;background:#fdf8ec;border-style:dashed}
+.card h3{font-size:20px;font-weight:normal}
+.card .note{font-size:13.5px;color:var(--ink-soft);margin-top:4px;line-height:1.5}
+.badges{margin-top:9px;display:flex;gap:7px;flex-wrap:wrap}
+.badge{font-size:11.5px;padding:3px 11px;border-radius:999px;border:1.5px solid currentColor;background:#fff9}
+.b-hours{color:#7a8ba0}
+.b-walkin{color:var(--leaf-deep)}
+.b-reso{color:var(--plum);font-weight:bold}
+.b-dist{color:#a86f4f}
+.b-warn{color:#b0764c}
+.pick-flag{position:absolute;top:-12px;right:14px;background:var(--sun);border:2px solid var(--ink);
+  border-radius:999px;padding:4px 12px;font-size:11.5px;font-style:italic;transform:rotate(3deg)}
+.card-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{border:2px solid var(--ink);border-radius:999px;padding:9px 15px;font-size:14px;font-style:italic;
+  background:var(--card);box-shadow:2px 3px 0 rgba(74,63,53,.15);min-height:42px;display:inline-flex;align-items:center;gap:6px}
+.btn:active{transform:translate(1px,2px);box-shadow:none}
+.btn-stamp{background:#eef4e8}
+.btn-maps{background:#eaf3f7;text-decoration:none;color:var(--ink)}
+.btn-pick{background:#fdf3e0;font-size:13px}
+/* visited state */
+.card.visited{opacity:.66;background:#f6f1e2}
+.card.visited h3{text-decoration:line-through 2px var(--peach-deep)}
+.visited-stamp{position:absolute;right:12px;top:-13px;background:var(--peach);border:2px solid var(--ink);
+  border-radius:999px;padding:5px 13px;font-size:12.5px;font-style:italic;transform:rotate(-4deg);color:#5c3a24}
+.sparkle-burst{position:absolute;pointer-events:none;font-size:18px;animation:spark .8s ease-out forwards}
+@keyframes spark{0%{opacity:1;transform:translate(0,0) scale(.6)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.25)}}
+
+/* ── map ── */
+.map-frame{border:2px solid var(--ink);border-radius:20px 24px 18px 26px;overflow:hidden;
+  box-shadow:var(--shadow);position:relative;z-index:0}
+#map{height:min(62vh,520px);min-height:340px;background:#eef4ec}
+.leaflet-tile-pane{filter:sepia(.26) saturate(.82) brightness(1.04)}
+.leaflet-container{font:inherit}
+.map-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-soft);margin-top:8px;padding:0 4px}
+.map-legend span{display:inline-flex;align-items:center;gap:5px}
+.lg{width:13px;height:13px;border-radius:50%;border:2px solid var(--ink);display:inline-block}
+.lg.route{background:var(--sun)} .lg.done{background:var(--leaf)} .lg.alt-dot{background:#fff;border-style:dashed}
+.lg.tiny{width:9px;height:9px;background:#c9b8d8;border-width:1.5px}
+/* markers */
+.pin{display:flex;align-items:center;justify-content:center;width:30px;height:30px;
+  border-radius:50% 46% 52% 48%;border:2px solid var(--ink);background:var(--sun);
+  font:bold 13px Georgia,serif;color:var(--ink);box-shadow:2px 2px 0 rgba(74,63,53,.25)}
+.pin.done{background:var(--leaf);color:#fff}
+.pin.alt-pin{background:#fffdf6;border-style:dashed;font-size:11px;width:24px;height:24px;opacity:.9}
+.pin.dot{width:12px;height:12px;background:#cdbede;border-width:1.5px;opacity:.85}
+.leaflet-popup-content-wrapper{background:var(--card);border:2px solid var(--ink);border-radius:14px;
+  color:var(--ink);box-shadow:var(--shadow)}
+.leaflet-popup-content{margin:10px 14px;font-size:13.5px;line-height:1.45}
+.leaflet-popup-tip{background:var(--card);border:1px solid var(--ink)}
+.route-path{stroke-dasharray:1 10;stroke-linecap:round;animation:walky 40s linear infinite}
+@keyframes walky{to{stroke-dashoffset:-400}}
+
+/* ── nearby treasures ── */
+#rec-intro b{color:var(--ink)}
+.card.rec{animation:driftIn .7s ease both}
+@keyframes driftIn{
+  from{opacity:0;transform:translateY(14px) rotate(-.6deg)}
+  to{opacity:1;transform:translateY(0) rotate(0)}
+}
+.cat-ico{font-style:normal;margin-right:6px}
+.empty-note{font-size:13px;font-style:italic;color:var(--muted);padding:8px 4px}
+
+footer{text-align:center;margin-top:44px;font-size:12.5px;font-style:italic;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){
+  .cloud,.crew.cheer svg,.route-path,.card.rec{animation:none}
+}

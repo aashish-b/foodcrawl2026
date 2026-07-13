@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: foodcrawl2026
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: site

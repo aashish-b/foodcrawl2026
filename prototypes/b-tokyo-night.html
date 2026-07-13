@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B · Tokyo Night Pop</title>
+<style>
+  :root{
+    --bg:#0d0b1e; --panel:#171432; --ink:#f2eefc;
+    --neonpink:#ff5fa2; --neoncyan:#4de3e0; --violet:#8b7bff; --amber:#ffc46b;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,'Helvetica Neue',sans-serif; color:var(--ink);
+    background:
+      radial-gradient(circle at 85% -5%, rgba(139,123,255,.25), transparent 45%),
+      radial-gradient(circle at 0% 30%, rgba(255,95,162,.12), transparent 40%),
+      var(--bg);
+    min-height:100vh; padding:24px 18px 60px;
+  }
+  header{margin-bottom:26px}
+  .kicker{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--neoncyan)}
+  h1{font-size:36px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px;line-height:1.05}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--neonpink),var(--violet),var(--neoncyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .jp{font-size:13px;color:#8f87b8;margin-top:4px;letter-spacing:.2em}
+  .stop-label{display:flex;align-items:baseline;gap:10px;margin:24px 0 10px}
+  .stop-num{font-size:26px;font-weight:800;color:var(--neonpink);text-shadow:0 0 14px rgba(255,95,162,.7)}
+  .stop-name{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#a79ecf}
+  .card{
+    background:var(--panel);border:1px solid #2d2857;border-radius:16px;
+    padding:16px 18px;margin-bottom:12px;position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(var(--neonpink),var(--violet))}
+  .card h2{font-size:19px;font-weight:700}
+  .card p{font-size:13.5px;color:#a89fd4;margin-top:5px;line-height:1.5}
+  .badges{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  .badge{font-size:11px;padding:4px 11px;border-radius:6px;font-weight:600;letter-spacing:.05em}
+  .near{color:var(--neoncyan);background:rgba(77,227,224,.12);box-shadow:inset 0 0 0 1px rgba(77,227,224,.4)}
+  .far{color:var(--amber);background:rgba(255,196,107,.1);box-shadow:inset 0 0 0 1px rgba(255,196,107,.35)}
+  .reso{color:var(--neonpink);background:rgba(255,95,162,.12);box-shadow:inset 0 0 0 1px rgba(255,95,162,.4)}
+  .visited{opacity:.5}
+  .visited h2{text-decoration:line-through}
+  .visited .clear{position:absolute;right:14px;top:14px;color:var(--neoncyan);font-size:12px;
+    font-weight:700;letter-spacing:.15em;text-shadow:0 0 12px rgba(77,227,224,.8)}
+  .mapline{
+    margin-top:26px;border-radius:16px;height:110px;border:1px solid #2d2857;
+    background:
+      linear-gradient(rgba(139,123,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139,123,255,.08) 1px, transparent 1px),
+      #120f28;
+    background-size:26px 26px;
+    display:flex;align-items:center;justify-content:center;color:#7d74ad;font-size:13px;letter-spacing:.15em;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="kicker">night route ver. 2026</div>
+    <h1>TORONTO<br><em>FOOD CRAWL</em></h1>
+    <div class="jp">トロント・フードクロール · 07.19 SUN</div>
+  </header>
+
+  <div class="stop-label"><span class="stop-num">01</span><span class="stop-name">morning fuel</span></div>
+  <div class="card">
+    <h2>Noctua Bakery</h2>
+    <p>Laminated perfection on Geary Ave. The croissant is the boss fight.</p>
+    <div class="badges"><span class="badge near">▲ 340 m</span></div>
+  </div>
+  <div class="card visited">
+    <span class="clear">CLEARED ✦</span>
+    <h2>Forno Cultura</h2>
+    <p>Underground Italian bakery. Espresso hits like a power-up.</p>
+    <div class="badges"><span class="badge far">▲ 2.1 km</span></div>
+  </div>
+
+  <div class="stop-label"><span class="stop-num">05</span><span class="stop-name">final stage · dinner</span></div>
+  <div class="card">
+    <h2>Bar Isabel</h2>
+    <p>Late-night Spanish energy. Order like you mean it.</p>
+    <div class="badges"><span class="badge reso">RESERVE ⚡</span><span class="badge near">▲ 800 m</span></div>
+  </div>
+
+  <div class="mapline">— NEON GRID MAP —</div>
+</body>
+</html>

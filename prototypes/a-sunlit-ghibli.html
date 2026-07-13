@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A · Sunlit Ghibli</title>
+<style>
+  :root{
+    --paper:#faf3e3; --ink:#4a3f35; --leaf:#7da87b; --sky:#a8cfe0;
+    --peach:#f2b28c; --sun:#f6d55c;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink);
+    background:
+      radial-gradient(ellipse 80% 40% at 20% -5%, #fdf9ee 0%, transparent 60%),
+      radial-gradient(ellipse 60% 30% at 90% 8%, #eef6f9 0%, transparent 70%),
+      var(--paper);
+    min-height:100vh; padding:24px 18px 60px;
+  }
+  .cloud{position:fixed;font-size:42px;opacity:.5;animation:drift 60s linear infinite;pointer-events:none}
+  .c1{top:4%;left:-10%}.c2{top:12%;left:-30%;font-size:28px;animation-duration:90s}
+  @keyframes drift{to{transform:translateX(130vw)}}
+  header{text-align:center;margin-bottom:26px}
+  .kicker{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:#a08c72}
+  h1{font-size:34px;font-weight:normal;font-style:italic;margin:6px 0 2px}
+  h1 .accent{color:#c96f4a}
+  .sub{font-size:14px;color:#8a7a66}
+  .stop-label{
+    display:flex;align-items:center;gap:10px;margin:22px 0 10px;
+    font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#8f9f77;
+  }
+  .stop-label::after{content:"";flex:1;border-top:2px dotted #cbbfa8}
+  .card{
+    background:#fffdf6; border:2px solid var(--ink); border-radius:18px 22px 16px 24px;
+    padding:16px 18px; margin-bottom:14px; position:relative;
+    box-shadow:4px 5px 0 rgba(74,63,53,.14);
+  }
+  .card h2{font-size:21px;font-weight:normal}
+  .card p{font-size:14px;color:#7c6d5b;margin-top:4px;line-height:1.5}
+  .badges{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  .badge{font-size:11.5px;padding:4px 12px;border-radius:999px;border:1.5px solid currentColor}
+  .near{color:#5c8462;background:#eef4e8}
+  .far{color:#a86f4f;background:#f9ede2}
+  .reso{color:#9c5a8a;background:#f6ecf4}
+  .stamp{
+    position:absolute;top:-12px;right:12px;background:var(--sun);border:2px solid var(--ink);
+    border-radius:999px;padding:5px 14px;font-size:12px;font-style:italic;transform:rotate(4deg);
+  }
+  .visited{opacity:.62}
+  .visited h2{text-decoration:line-through 2px}
+  .visited::after{content:"visited! ☀";position:absolute;right:16px;bottom:12px;
+    font-style:italic;color:#c96f4a;font-size:15px;transform:rotate(-3deg)}
+  .mapline{
+    margin-top:26px;background:#eef4ec;border:2px solid var(--ink);border-radius:20px;
+    height:110px;display:flex;align-items:center;justify-content:center;
+    font-style:italic;color:#7b8f74;font-size:14px;
+    background-image:radial-gradient(#c9dcc4 2px, transparent 2.5px);background-size:22px 22px;
+  }
+</style>
+</head>
+<body>
+  <div class="cloud c1">☁️</div><div class="cloud c2">☁️</div>
+  <header>
+    <div class="kicker">a wandering day</div>
+    <h1>The Toronto <span class="accent">Crawl</span></h1>
+    <div class="sub">sunday · july 19 · five little adventures</div>
+  </header>
+
+  <div class="stop-label">first light — coffee &amp; pastry</div>
+  <div class="card">
+    <div class="stamp">stop one</div>
+    <h2>Noctua Bakery</h2>
+    <p>Croissants like golden clouds. Order the danish before it disappears.</p>
+    <div class="badges"><span class="badge near">340 m away</span></div>
+  </div>
+  <div class="card visited">
+    <h2>Forno Cultura</h2>
+    <p>Italian pastry under King Street — espresso with a soul.</p>
+    <div class="badges"><span class="badge far">2.1 km away</span></div>
+  </div>
+
+  <div class="stop-label">golden hour — dinner</div>
+  <div class="card">
+    <div class="stamp">stop five</div>
+    <h2>Bar Isabel</h2>
+    <p>Spanish feast, candlelight, the good vermouth.</p>
+    <div class="badges"><span class="badge reso">reserve ahead ✎</span><span class="badge near">800 m away</span></div>
+  </div>
+
+  <div class="mapline">〜 a soft watercolor map lives here 〜</div>
+</body>
+</html>
