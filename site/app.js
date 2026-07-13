@@ -71,6 +71,8 @@ const PHASES = [
     stampAfter: GATES.evening, gateLabel: "7:00 pm",
     teaser: "sealed ✉ — stamp a golden-hour treat to reveal dinner",
     options: [
+      { id: "bar-vendetta", note: "Jen Agg's 1970s pasta-and-wine room — handmade rigatoni, retro glamour, killer wine.",
+        hours: "sun 5 pm – 10:30 pm", reso: { level: "reserve", text: "reserved ✎ — this is the one" } },
       { id: "bar-isabel", note: "Candlelit Spanish tavern — pan con tomate, wild mushrooms, the good vermouth.",
         hours: "sun 5 pm – 11 pm", reso: { level: "reserve", text: "reserve ahead ✎ barisabel.com" } },
       { id: "dailo", note: "Nick Liu's French-Asian — Big Mac bao, fried watermelon, dan dan everything.",
