@@ -76,6 +76,10 @@ h2{font-size:22px;font-weight:normal;font-style:italic;margin:34px 0 4px}
 .btn-stamp{background:#eef4e8}
 .btn-maps{background:#eaf3f7;text-decoration:none;color:var(--ink)}
 .btn-pick{background:#fdf3e0;font-size:13px}
+/* sealed / locked */
+.card.sealed{border-style:dashed;background:#f6efe0;color:var(--muted);
+  font-style:italic;font-size:14px;text-align:center;padding:22px 16px}
+.btn.locked{opacity:.55;font-style:italic;box-shadow:none;cursor:default}
 /* visited state */
 .card.visited{opacity:.66;background:#f6f1e2}
 .card.visited h3{text-decoration:line-through 2px var(--peach-deep)}
@@ -93,14 +97,13 @@ h2{font-size:22px;font-weight:normal;font-style:italic;margin:34px 0 4px}
 .map-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-soft);margin-top:8px;padding:0 4px}
 .map-legend span{display:inline-flex;align-items:center;gap:5px}
 .lg{width:13px;height:13px;border-radius:50%;border:2px solid var(--ink);display:inline-block}
-.lg.route{background:var(--sun)} .lg.done{background:var(--leaf)} .lg.alt-dot{background:#fff;border-style:dashed}
+.lg.route{background:var(--sun)} .lg.done{background:var(--leaf)}
 .lg.tiny{width:9px;height:9px;background:#c9b8d8;border-width:1.5px}
 /* markers */
 .pin{display:flex;align-items:center;justify-content:center;width:30px;height:30px;
   border-radius:50% 46% 52% 48%;border:2px solid var(--ink);background:var(--sun);
   font:bold 13px Georgia,serif;color:var(--ink);box-shadow:2px 2px 0 rgba(74,63,53,.25)}
 .pin.done{background:var(--leaf);color:#fff}
-.pin.alt-pin{background:#fffdf6;border-style:dashed;font-size:11px;width:24px;height:24px;opacity:.9}
 .pin.dot{width:12px;height:12px;background:#cdbede;border-width:1.5px;opacity:.85}
 .leaflet-popup-content-wrapper{background:var(--card);border:2px solid var(--ink);border-radius:14px;
   color:var(--ink);box-shadow:var(--shadow)}

@@ -61,13 +61,22 @@ APPROX = {"Signatures Restaurant","Moments","Aura","Gushi (Gerrard E x Parliamen
           "Lokum Eats - Food by Tradition","Raku","Convivium Dining Community"}
 FIXUPS = {"Lokum Eats - Food by Tradition": (43.6656, -79.4692),
           # "416 Snack Bar" lost its prefix in pass 1 and matched the wrong POI — 181 Bathurst St
-          "416 Snack Bar": (43.64789, -79.40412)}
+          "416 Snack Bar": (43.64789, -79.40412),
+          # first pass matched the wrong POI; verified home is 181 Dovercourt Rd
+          "Pizzeria Badiali": (43.64612, -79.42334)}
 RENAMES = {"Snack Bar": "416 Snack Bar"}
+# not in the original collection — added for the crawl reveal phases
+EXTRA = [
+    {"name": "Harry's Charbroiled (Waterworks)", "lat": 43.64673, "lng": -79.39923, "cat": "food"},
+]
 
 def slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")[:40]
 
 data = json.load(open(f"{BASE}/tools/geocoded-final.json"))
+data += [{"name": e["name"], "lat": e["lat"], "lng": e["lng"], "matched": "EXTRA"} for e in EXTRA]
+CATS.update({e["name"]: e["cat"] for e in EXTRA})
+DISPLAY["Harry's Charbroiled (Waterworks)"] = "Harry's Charbroiled"
 out, seen = [], set()
 for r in data:
     name = RENAMES.get(r["name"], r["name"])

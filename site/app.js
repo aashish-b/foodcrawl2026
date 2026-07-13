@@ -1,62 +1,81 @@
 /* ── The Toronto Crawl · July 19, 2026 ─────────────────────────────
-   Vanilla JS. State in localStorage. Map: Leaflet + Carto Voyager.  */
+   Progressive-reveal quest. Vanilla JS, state in localStorage.
+   Phases unlock by stamping; stamps unlock by Toronto (EDT) clock.
+   Add ?rehearsal to the URL to bypass the clock for a dry run.     */
 "use strict";
 
-/* ---------- itinerary ---------- */
-const CRAWL = [
-  { leg: 1, label: "first light · brunch", when: "11:00 am", locked: true, options: [{
+/* ---------- clocks & gates ---------- */
+const GATES = {
+  start:   Date.parse("2026-07-19T11:00:00-04:00"),
+  lunch:   Date.parse("2026-07-19T14:00:00-04:00"),
+  evening: Date.parse("2026-07-19T19:00:00-04:00"),
+};
+const REHEARSAL = new URLSearchParams(location.search).has("rehearsal");
+const canStampAt = t => REHEARSAL || Date.now() >= t;
+
+/* ---------- phases ---------- */
+const PHASES = [
+  { key: "one", num: 1, label: "stop one · first light · brunch", when: "11:00 am",
+    stampAfter: GATES.start, gateLabel: "11:00 am", plan: true, options: [{
       id: "old-school",
       note: "All-day brunch HQ — Blueberry Hill pancakes, chicken & waffles, big sunny diner energy.",
       hours: "sun 9 am – 5 pm",
       reso: { level: "consider", text: "bookable on OpenTable — smart for 4" },
     }]},
-  { leg: 2, label: "a little detour · persian treat", when: "~12:45 pm", locked: true, options: [{
+  { key: "two", num: 2, label: "stop two · a little detour · persian treat", when: "~12:45 pm",
+    stampAfter: GATES.start, gateLabel: "11:00 am", plan: true, options: [{
       id: "tochal",
       note: "Persian juice & ice-cream bar — saffron soft-serve, rosewater, fresh juice. A quick sweet detour.",
       hours: "sun 11 am – 9 pm",
       reso: { level: "walkin", text: "walk right in" },
     }]},
-  { leg: 3, label: "the official lunch", when: "~1:30 pm", options: [
-    { id: "sugo",
-      note: "Riotous red-sauce Italian-American — the eggplant parm of legend. Cash or debit only!",
-      hours: "sun 11:30 am – 9 pm",
-      reso: { level: "walkin", text: "no reservations — go early-ish" } },
-    { id: "saigon-lotus",
-      note: "Michelin Bib Gourmand vegan Vietnamese tucked into Kensington — lotus rolls, vegan phở.",
-      hours: "sun 11 am – 10 pm",
-      reso: { level: "walkin", text: "walk-in" } },
-  ]},
-  { leg: 4, label: "golden afternoon · something sweet", when: "~3:30 pm", options: [
-    { id: "death-in-venice-gelato",
-      note: "Mad-genius gelato lab — olive oil & sea salt, truffle maple sage — plus proper espresso.",
-      hours: "sun 9 am – 9 pm",
-      reso: { level: "walkin", text: "walk-in" } },
-    { id: "bricolage-bakery",
-      note: "Korean-French bakes — the double-baked almond croissant is the one.",
-      hours: "sun 8:30 am – 3 pm",
-      reso: { level: "walkin", text: "walk-in" },
-      warn: "closes 3 pm — visit before, or swap" },
-  ]},
-  { leg: 5, label: "blue hour · a proper drink", when: "~6:00 pm", options: [
-    { id: "civil-liberties",
-      note: "No menu at all — name a mood and they build your cocktail. Top-50 bar in North America.",
-      hours: "sun 6 pm – 2 am",
-      reso: { level: "walkin", text: "walk-in only" } },
-    { id: "bar-pompette",
-      note: "French cocktail royalty (World's 50 Best) — and live jazz on Sunday nights.",
-      hours: "sun 6 pm – midnight",
-      reso: { level: "walkin", text: "walk-in only" } },
-  ]},
-  { leg: 6, label: "lantern light · dinner", when: "~7:30 pm", options: [
-    { id: "bar-isabel",
-      note: "Candlelit Spanish tavern — pan con tomate, wild mushrooms, the good vermouth.",
-      hours: "sun 5 pm – 11 pm",
-      reso: { level: "reserve", text: "reserve ahead ✎ barisabel.com" } },
-    { id: "dailo",
-      note: "Nick Liu's French-Asian — Big Mac bao, fried watermelon, dan dan everything.",
-      hours: "sun 5 pm – 11 pm",
-      reso: { level: "reserve", text: "reserve ahead ✎ OpenTable / 647-341-8882" } },
-  ]},
+  { key: "lunch", num: 3, label: "stop three · the lunch reveal", when: "from 2:00 pm",
+    stampAfter: GATES.lunch, gateLabel: "2:00 pm",
+    teaser: "sealed ✉ — stamp Old School and Tochal to reveal the lunch spots",
+    options: [
+      { id: "sugo", note: "Riotous red-sauce Italian-American — the eggplant parm of legend. Cash or debit only!",
+        hours: "sun 11:30 am – 9 pm", reso: { level: "walkin", text: "no reservations" } },
+      { id: "pizzeria-badiali", note: "Perfect New-York-style slices — worth every minute of the line.",
+        hours: "sun 12 – 9 pm", reso: { level: "walkin", text: "counter service" } },
+      { id: "harry-s-charbroiled", note: "Smash-burger royalty, now inside the Waterworks Food Hall on Brant St.",
+        hours: "sun 11:30 am – 10 pm", reso: { level: "walkin", text: "food-hall counter" } },
+      { id: "saigon-lotus", note: "Michelin Bib Gourmand vegan Vietnamese tucked into Kensington — lotus rolls, vegan phở.",
+        hours: "sun 11 am – 10 pm", reso: { level: "walkin", text: "walk-in" } },
+      { id: "machida-shoten", note: "Canada's first Yokohama iekei ramen — rich, garlicky, gone in minutes.",
+        hours: "sun 11 am – 10 pm", reso: { level: "walkin", text: "walk-in" } },
+      { id: "miznon", note: "Eyal Shani's whole roasted cauliflower and pillowy pita, up in Yorkville.",
+        hours: "sun 11 am – 8 pm", reso: { level: "walkin", text: "counter service" } },
+      { id: "banh-mi-nguyen-huong", note: "Chinatown bánh mì institution — cheap, fast, perfect.",
+        reso: { level: "walkin", text: "walk-in" } },
+    ]},
+  { key: "predinner", num: 4, label: "stop four · the golden-hour reveal", when: "evening",
+    stampAfter: GATES.evening, gateLabel: "7:00 pm",
+    teaser: "sealed ✉ — stamp a lunch spot to reveal the golden-hour treats",
+    options: [
+      { id: "death-in-venice-gelato", note: "Mad-genius gelato lab — olive oil & sea salt, truffle maple sage — plus espresso.",
+        hours: "sun 9 am – 9 pm", reso: { level: "walkin", text: "walk-in" } },
+      { id: "icha-tea", note: "Hand-brewed jasmine and oolong that broke the internet — Chinatown tea magic.",
+        reso: { level: "walkin", text: "walk-in" } },
+      { id: "ruru-baked", note: "Dreamy small-batch ice cream on Lansdowne — ube, hojicha, honeycomb moods.",
+        reso: { level: "walkin", text: "walk-in" } },
+      { id: "civil-liberties", note: "No menu at all — name a mood and they build your cocktail. Top-50 in North America.",
+        hours: "sun 6 pm – 2 am", reso: { level: "walkin", text: "walk-in only" } },
+      { id: "bar-pompette", note: "French cocktail royalty (World's 50 Best) — live jazz on Sunday nights.",
+        hours: "sun 6 pm – midnight", reso: { level: "walkin", text: "walk-in only" } },
+      { id: "el-rey-mezcal-bar", note: "Smoky mezcal hideout in a Kensington alley — snacks to match.",
+        reso: { level: "walkin", text: "walk-in" } },
+      { id: "project-gigglewater", note: "Your friendly neighbourhood cocktail bar on Dundas West — zero pretension.",
+        reso: { level: "walkin", text: "walk-in" } },
+    ]},
+  { key: "dinner", num: 5, label: "stop five · lantern light · dinner", when: "~7:30 pm",
+    stampAfter: GATES.evening, gateLabel: "7:00 pm",
+    teaser: "sealed ✉ — stamp a golden-hour treat to reveal dinner",
+    options: [
+      { id: "bar-isabel", note: "Candlelit Spanish tavern — pan con tomate, wild mushrooms, the good vermouth.",
+        hours: "sun 5 pm – 11 pm", reso: { level: "reserve", text: "reserve ahead ✎ barisabel.com" } },
+      { id: "dailo", note: "Nick Liu's French-Asian — Big Mac bao, fried watermelon, dan dan everything.",
+        hours: "sun 5 pm – 11 pm", reso: { level: "reserve", text: "reserve ahead ✎ OpenTable / 647-341-8882" } },
+    ]},
 ];
 
 const CAT_ICON = { cafe: "☕", bakery: "🥐", sweets: "🍧", food: "🍜", bar: "🍸" };
@@ -65,14 +84,21 @@ const CAT_NAME = { cafe: "café", bakery: "bakery", sweets: "sweets", food: "res
 /* ---------- state ---------- */
 const KEY = "crawl-2026-07-19";
 const byId = Object.fromEntries(PLACES.map(p => [p.id, p]));
-let state = { visited: {}, picks: {}, history: [] };
+let state = { visited: {}, history: [] };
 try { state = Object.assign(state, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
 const save = () => localStorage.setItem(KEY, JSON.stringify(state));
 
-const pickOf = leg => state.picks[leg.leg] || leg.options[0].id;
-const legDone = leg => !!state.visited[pickOf(leg)];
-const plannedStops = () => CRAWL.map(l => byId[pickOf(l)]);
-const nextLeg = () => CRAWL.find(l => !legDone(l)) || null;
+const phaseDone = ph => ph.options.some(o => state.visited[o.id]);
+function phaseRevealed(ph) {
+  switch (ph.key) {
+    case "one": case "two": return true;
+    case "lunch":     return !!(state.visited["old-school"] && state.visited["tochal"]);
+    case "predinner": return phaseDone(PHASES[2]);
+    case "dinner":    return phaseDone(PHASES[3]);
+  }
+}
+const currentPhase = () => PHASES.find(ph => phaseRevealed(ph) && !phaseDone(ph)) || null;
+const ALL_OPTION_IDS = new Set(PHASES.flatMap(ph => ph.options.map(o => o.id)));
 
 /* ---------- helpers ---------- */
 const $ = sel => document.querySelector(sel);
@@ -95,54 +121,58 @@ $("#crew").innerHTML = CREW_COLORS.map(c => `
   <path d="M16 26 q4 3.4 8 0" stroke="#4a3f35" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>`).join("");
 
 function renderHeader() {
-  const done = CRAWL.filter(legDone).length;
-  $("#stamps").innerHTML = CRAWL.map(l =>
-    `<span class="stamp-dot ${legDone(l) ? "done" : ""}">☀</span>`).join("");
+  const done = PHASES.filter(phaseDone).length;
+  $("#stamps").innerHTML = PHASES.map(ph =>
+    `<span class="stamp-dot ${phaseDone(ph) ? "done" : ""}">☀</span>`).join("");
   $("#stamps-label").textContent =
     done === 0 ? "the adventure awaits…" :
-    done === CRAWL.length ? "all six stamps — what a day ☀" :
-    `${done} of ${CRAWL.length} stamps collected`;
+    done === PHASES.length ? "all five stamps — what a day ☀" :
+    `${done} of ${PHASES.length} stamps collected`;
 }
 
 /* ---------- itinerary ---------- */
+function optionCard(ph, opt, revealedNow) {
+  const p = byId[opt.id];
+  const isVisited = !!state.visited[opt.id];
+  const stampOpen = canStampAt(ph.stampAfter);
+  const resoBadge = opt.reso.level === "reserve"
+    ? `<span class="badge b-reso">${esc(opt.reso.text)}</span>`
+    : `<span class="badge b-walkin">${esc(opt.reso.text)}</span>`;
+  const stampBtn = isVisited
+    ? `<button class="btn btn-stamp" data-visit="${opt.id}">↺ un-stamp</button>`
+    : stampOpen
+      ? `<button class="btn btn-stamp" data-visit="${opt.id}">☀ stamp it — we were here!</button>`
+      : `<button class="btn btn-stamp locked" disabled>⏳ stamps open at ${ph.gateLabel}</button>`;
+  return `
+  <div class="card ${revealedNow ? "rec" : ""} ${isVisited ? "visited" : ""}" data-id="${opt.id}">
+    ${ph.plan && !isVisited ? `<div class="pick-flag">the plan ☀</div>` : ""}
+    ${isVisited ? `<div class="visited-stamp">visited! ☀</div>` : ""}
+    <h3>${esc(p.name)}</h3>
+    <p class="note">${esc(opt.note)}</p>
+    <div class="badges">
+      ${opt.hours ? `<span class="badge b-hours">${esc(opt.hours)}</span>` : ""}
+      ${resoBadge}
+    </div>
+    <div class="card-actions">
+      ${stampBtn}
+      <a class="btn btn-maps" target="_blank" rel="noopener" href="${gmaps(p)}">⛯ take me there</a>
+    </div>
+  </div>`;
+}
+
+let lastRevealedKeys = new Set();
 function renderItinerary() {
-  const planned = plannedStops();
-  $("#itinerary").innerHTML = CRAWL.map((leg, i) => {
-    const pickedId = pickOf(leg);
-    const fromPrev = i > 0
-      ? fmtDist(dist(planned[i - 1], planned[i])) + " from last stop" : "";
-    const cards = leg.options.map(opt => {
-      const p = byId[opt.id];
-      const isPick = opt.id === pickedId;
-      const isVisited = !!state.visited[opt.id];
-      const resoBadge = opt.reso.level === "reserve"
-        ? `<span class="badge b-reso">${esc(opt.reso.text)}</span>`
-        : `<span class="badge b-walkin">${esc(opt.reso.text)}</span>`;
-      return `
-      <div class="card ${isPick ? "" : "alt"} ${isVisited ? "visited" : ""}" data-id="${opt.id}">
-        ${isPick && leg.locked && !isVisited ? `<div class="pick-flag">the plan ☀</div>` : ""}
-        ${isVisited ? `<div class="visited-stamp">visited! ☀</div>` : ""}
-        <h3>${esc(p.name)}</h3>
-        <p class="note">${esc(opt.note)}</p>
-        <div class="badges">
-          <span class="badge b-hours">${esc(opt.hours)}</span>
-          ${resoBadge}
-          ${opt.warn ? `<span class="badge b-warn">⚠ ${esc(opt.warn)}</span>` : ""}
-          ${isPick && fromPrev ? `<span class="badge b-dist">${fromPrev}</span>` : ""}
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-stamp" data-visit="${opt.id}">
-            ${isVisited ? "↺ un-stamp" : "☀ stamp it — we were here!"}</button>
-          <a class="btn btn-maps" target="_blank" rel="noopener" href="${gmaps(p)}">⛯ take me there</a>
-          ${!isPick && !leg.locked ? `<button class="btn btn-pick" data-pick="${leg.leg}:${opt.id}">make this the plan</button>` : ""}
-        </div>
-      </div>`;
-    }).join("");
-    return `
-    <div class="stop-label"><span>stop ${["one","two","three","four","five","six"][i]} · ${esc(leg.label)}</span>
-      <span class="when">${leg.when}</span></div>
-    ${cards}`;
+  const html = PHASES.map(ph => {
+    const revealed = phaseRevealed(ph);
+    const newlyRevealed = revealed && !lastRevealedKeys.has(ph.key);
+    const head = `
+      <div class="stop-label"><span>${revealed ? esc(ph.label) : `stop ${["one","two","three","four","five"][ph.num-1]} · ???`}</span>
+        <span class="when">${revealed ? ph.when : ""}</span></div>`;
+    if (!revealed) return head + `<div class="card sealed">🕯 ${esc(ph.teaser)}</div>`;
+    return head + ph.options.map(o => optionCard(ph, o, newlyRevealed)).join("");
   }).join("");
+  $("#itinerary").innerHTML = html;
+  lastRevealedKeys = new Set(PHASES.filter(phaseRevealed).map(ph => ph.key));
 }
 
 function sparkle(card) {
@@ -161,26 +191,20 @@ function sparkle(card) {
 
 $("#itinerary").addEventListener("click", e => {
   const visitBtn = e.target.closest("[data-visit]");
-  const pickBtn = e.target.closest("[data-pick]");
-  if (visitBtn) {
-    const id = visitBtn.dataset.visit;
-    const nowVisited = !state.visited[id];
-    if (nowVisited) {
-      state.visited[id] = true;
-      state.history = state.history.filter(h => h !== id).concat(id);
-      sparkle(visitBtn.closest(".card"));
-      const crew = $("#crew");
-      crew.classList.remove("cheer"); void crew.offsetWidth; crew.classList.add("cheer");
-    } else {
-      delete state.visited[id];
-      state.history = state.history.filter(h => h !== id);
-    }
-    save(); refresh({ keepScroll: true });
-  } else if (pickBtn) {
-    const [legNo, id] = pickBtn.dataset.pick.split(":");
-    state.picks[legNo] = id;
-    save(); refresh({ keepScroll: true });
+  if (!visitBtn || visitBtn.disabled) return;
+  const id = visitBtn.dataset.visit;
+  const nowVisited = !state.visited[id];
+  if (nowVisited) {
+    state.visited[id] = true;
+    state.history = state.history.filter(h => h !== id).concat(id);
+    sparkle(visitBtn.closest(".card"));
+    const crew = $("#crew");
+    crew.classList.remove("cheer"); void crew.offsetWidth; crew.classList.add("cheer");
+  } else {
+    delete state.visited[id];
+    state.history = state.history.filter(h => h !== id);
   }
+  save(); refresh({ keepScroll: true });
 });
 
 /* ---------- map ---------- */
@@ -189,7 +213,6 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
   maxZoom: 19,
 }).addTo(map);
-map.fitBounds(L.latLngBounds(plannedStops().map(p => [p.lat, p.lng])).pad(0.18));
 
 const routeLayer = L.layerGroup().addTo(map);
 const collectionLayer = L.layerGroup().addTo(map);
@@ -202,9 +225,8 @@ function popupHtml(p, extra) {
 
 function drawCollection() {
   collectionLayer.clearLayers();
-  const crawlIds = new Set(CRAWL.flatMap(l => l.options.map(o => o.id)));
   PLACES.forEach(p => {
-    if (crawlIds.has(p.id)) return;
+    if (ALL_OPTION_IDS.has(p.id)) return;
     L.marker([p.lat, p.lng], {
       icon: L.divIcon({ className: "", html: `<div class="pin dot"></div>`, iconSize: [12, 12], iconAnchor: [6, 6] }),
       keyboard: false,
@@ -214,36 +236,38 @@ function drawCollection() {
 
 function drawRoute() {
   routeLayer.clearLayers();
-  const planned = plannedStops();
-  const nxt = nextLeg();
-  const nextIdx = nxt ? CRAWL.indexOf(nxt) : CRAWL.length;
+  const bounds = [];
 
-  // segments between consecutive planned stops
-  for (let i = 0; i < planned.length - 1; i++) {
-    const pts = [[planned[i].lat, planned[i].lng], [planned[i + 1].lat, planned[i + 1].lng]];
-    let style;
-    if (i + 1 < nextIdx)      style = { color: "#7da87b", weight: 3.5, opacity: .85 };                    // walked
-    else if (i + 1 === nextIdx) style = { color: "#c96f4a", weight: 5, opacity: .95, className: "route-path" }; // next!
-    else                      style = { color: "#b7a98c", weight: 3, opacity: .7, dashArray: "2 9" };     // later
-    L.polyline(pts, style).addTo(routeLayer);
+  // the trail so far — solid sage through every stamped place, in order
+  const trail = state.history.map(id => byId[id]).filter(Boolean);
+  if (trail.length > 1)
+    L.polyline(trail.map(p => [p.lat, p.lng]), { color: "#7da87b", weight: 3.5, opacity: .85 }).addTo(routeLayer);
+  trail.forEach(p => bounds.push([p.lat, p.lng]));
+
+  // animated peach fan: from where you are to each open choice of the current phase
+  const cur = currentPhase();
+  const last = trail.at(-1);
+  if (cur && last) {
+    cur.options.filter(o => !state.visited[o.id]).forEach(o => {
+      const p = byId[o.id];
+      L.polyline([[last.lat, last.lng], [p.lat, p.lng]],
+        { color: "#c96f4a", weight: 4, opacity: .8, className: "route-path" }).addTo(routeLayer);
+    });
   }
-  // alternates (dashed pins)
-  CRAWL.forEach(leg => leg.options.forEach(opt => {
-    if (opt.id === pickOf(leg)) return;
-    const p = byId[opt.id];
-    L.marker([p.lat, p.lng], {
-      icon: L.divIcon({ className: "", html: `<div class="pin alt-pin">·</div>`, iconSize: [24, 24], iconAnchor: [12, 12] }),
-    }).bindPopup(popupHtml(p, " · alternate")).addTo(routeLayer);
-  }));
-  // planned numbered pins
-  CRAWL.forEach((leg, i) => {
-    const p = planned[i];
-    const done = legDone(leg);
-    L.marker([p.lat, p.lng], {
-      icon: L.divIcon({ className: "", html: `<div class="pin ${done ? "done" : ""}">${done ? "✓" : i + 1}</div>`, iconSize: [30, 30], iconAnchor: [15, 15] }),
-      zIndexOffset: 500,
-    }).bindPopup(popupHtml(p, ` · stop ${i + 1} · ${leg.when}`)).addTo(routeLayer);
+
+  // pins for revealed phases only — no spoilers
+  PHASES.filter(phaseRevealed).forEach(ph => {
+    ph.options.forEach(o => {
+      const p = byId[o.id];
+      const done = !!state.visited[o.id];
+      bounds.push([p.lat, p.lng]);
+      L.marker([p.lat, p.lng], {
+        icon: L.divIcon({ className: "", html: `<div class="pin ${done ? "done" : ""}">${done ? "✓" : ph.num}</div>`, iconSize: [30, 30], iconAnchor: [15, 15] }),
+        zIndexOffset: 500,
+      }).bindPopup(popupHtml(p, ` · stop ${ph.num} · ${ph.when}`)).addTo(routeLayer);
+    });
   });
+  return bounds;
 }
 
 /* ---------- nearby treasures — two recs drift in after each stamp ---------- */
@@ -265,9 +289,8 @@ function renderNearby() {
     return;
   }
   intro.innerHTML = `Since you're at <b>${esc(anchor.name)}</b> — two treasures worth a peek:`;
-  const crawlIds = new Set(CRAWL.flatMap(l => l.options.map(o => o.id)));
   const recs = PLACES
-    .filter(p => p.id !== anchor.id && !crawlIds.has(p.id) && !state.visited[p.id])
+    .filter(p => p.id !== anchor.id && !ALL_OPTION_IDS.has(p.id) && !state.visited[p.id])
     .map(p => ({ p, d: dist(anchor, p) }))
     .sort((a, b) => a.d - b.d)
     .slice(0, 2);
@@ -295,13 +318,21 @@ $("#recs").addEventListener("click", e => {
 });
 
 /* ---------- refresh ---------- */
+let fitted = false;
 function refresh(opts = {}) {
   const y = opts.keepScroll ? window.scrollY : null;
   renderHeader();
   renderItinerary();
-  drawRoute();
+  const bounds = drawRoute();
   renderNearby();
+  if (!fitted && bounds.length) {
+    map.fitBounds(L.latLngBounds(bounds).pad(0.2));
+    fitted = true;
+  }
   if (y !== null) window.scrollTo(0, y);
 }
-renderHeader(); renderItinerary(); drawCollection(); drawRoute(); renderNearby();
+drawCollection();
+refresh();
 window.addEventListener("load", () => map.invalidateSize());
+// flip stamp buttons open on their own once a gate time passes
+setInterval(() => refresh({ keepScroll: true }), 60000);

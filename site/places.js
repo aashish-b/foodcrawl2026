@@ -589,8 +589,8 @@ const PLACES = [
  {
   "id": "pizzeria-badiali",
   "name": "Pizzeria Badiali",
-  "lat": 43.66377,
-  "lng": -79.41176,
+  "lat": 43.64612,
+  "lng": -79.42334,
   "cat": "food"
  },
  {
@@ -972,5 +972,12 @@ const PLACES = [
   "lat": 43.64931,
   "lng": -79.42494,
   "cat": "sweets"
+ },
+ {
+  "id": "harry-s-charbroiled",
+  "name": "Harry's Charbroiled",
+  "lat": 43.64673,
+  "lng": -79.39923,
+  "cat": "food"
  }
 ];
