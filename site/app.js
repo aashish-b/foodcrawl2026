@@ -80,11 +80,12 @@ const PHASES = [
     ]},
 ];
 
-/* ---------- curator sheet (optional remote control) ----------
-   A published-to-web Google Sheet CSV with columns: phase, id, name, show.
-   Rows with show=yes keep that option visible in its reveal; a phase with
-   zero yes-rows (or an unreachable sheet) falls back to the full pool.   */
-const SHEET_CSV_URL = "";
+/* ---------- curator sheet (remote control) ----------
+   A link-readable Google Sheet, fetched as CSV, columns: phase, id, name, show.
+   Rows with show=yes make that place visible in its reveal; a phase with
+   zero yes-rows (or an unreachable sheet) falls back to the built-in pool.
+   URL lightly obscured so the plan isn't one view-source away.            */
+const SHEET_CSV_URL = atob("aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMXRRTTVUVWlBeTh2OVFweWpKWm5Lc1NjcndWN1FlYXk3MnhvUDVkM0dFeVUvZ3Zpei90cT90cXg9b3V0OmNzdiZnaWQ9MA==");
 let sheetConfig = null;
 async function pollSheet() {
   if (!SHEET_CSV_URL) return;
@@ -108,7 +109,12 @@ const dumpCfg = c => c ? Object.fromEntries(Object.entries(c).map(([k, v]) => [k
 function activeOptions(ph) {
   const chosen = sheetConfig && sheetConfig[ph.key];
   if (!chosen || !chosen.size) return ph.options;
-  const kept = ph.options.filter(o => chosen.has(o.id));
+  const known = new Map(ph.options.map(o => [o.id, o]));
+  // sheet order wins; ids outside the built-in pool become simple walk-in cards
+  const kept = [...chosen].filter(id => byId[id]).map(id => known.get(id) || {
+    id, note: "A hand-picked detour from the collection — trust the curator ✧",
+    reso: { level: "walkin", text: "walk-in" },
+  });
   return kept.length ? kept : ph.options;
 }
 

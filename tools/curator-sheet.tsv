@@ -1,0 +1,138 @@
+phase	id	name	show
+lunch	banh-mi-nguyen-huong	Banh Mi Nguyen Huong	yes
+lunch	harry-s-charbroiled	Harry's Charbroiled	yes
+lunch	machida-shoten	Machida Shoten	yes
+lunch	miznon	Miznon	yes
+lunch	pizzeria-badiali	Pizzeria Badiali	yes
+lunch	saigon-lotus	Saigon Lotus	yes
+lunch	sugo	Sugo	yes
+lunch	acute-pizzeria	Acute Pizzeria	no
+lunch	anh-dao-restaurant	Anh Dao Restaurant	no
+lunch	black-camel	Black Camel	no
+lunch	buk-chang-dong-soon-tofu	Buk Chang Dong Soon Tofu	no
+lunch	cafe-polonez	Cafe Polonez	no
+lunch	chilliy-pepper-tacos	Chilliy Pepper TACOS	no
+lunch	comal-y-canela	Comal y Canela	no
+lunch	elm-street-italian-deli	Elm Street Italian Deli	no
+lunch	gram-s-pizza	gram's pizza	no
+lunch	gushi	Gushi	no
+lunch	hastings-snack-bar	Hastings Snack Bar	no
+lunch	hey-noodles	Hey Noodles	no
+lunch	homemade-ramen	Homemade Ramen	no
+lunch	kyouka-ramen	Kyouka Ramen	no
+lunch	la-salumeria	La Salumeria	no
+lunch	lokum-eats	Lokum Eats	no
+lunch	mattachioni	Mattachioni	no
+lunch	momo-ghar	Momo Ghar	no
+lunch	pho-linh	Pho Linh	no
+lunch	pizzeria-defina	Pizzeria Defina	no
+lunch	pukka	Pukka	no
+lunch	renaissance-detroit-style-pizza	Renaissance Detroit Style Pizza	no
+lunch	savor-thai-toronto	Savor Thai Toronto	no
+lunch	schmaltz-appetizing	Schmaltz Appetizing	no
+lunch	sleepy-pete-s	Sleepy Pete's	no
+lunch	som-tum-jinda	Som Tum Jinda	no
+lunch	the-bagel-house	The Bagel House	no
+lunch	the-epicure-shop	The Epicure Shop	no
+lunch	the-morning-after	The Morning After	no
+lunch	viet-chay-vegan-cuisine	Viet Chay Vegan Cuisine	no
+predinner	bar-pompette	Bar Pompette	yes
+predinner	civil-liberties	Civil Liberties	yes
+predinner	death-in-venice-gelato	Death In Venice Gelato	yes
+predinner	el-rey-mezcal-bar	El Rey Mezcal Bar	yes
+predinner	icha-tea	ICHA TEA	yes
+predinner	project-gigglewater	PROJECT GIGGLEWATER	yes
+predinner	ruru-baked	Ruru Baked	yes
+predinner	alma-gil	ALMA+GIL	no
+predinner	bad-attitude-bread	Bad Attitude Bread	no
+predinner	baker-and-scone	Baker and Scone	no
+predinner	balam-toronto	Balam Toronto	no
+predinner	bar-poet	Bar Poet	no
+predinner	bar-reyna	Bar Reyna	no
+predinner	barbershop-patisserie	Barbershop Patisserie	no
+predinner	bevy	Bevy	no
+predinner	bkookies-cafe	BKookies Cafe	no
+predinner	black-wolf-coffee	Black wolf coffee	no
+predinner	bloom-cafe	Bloom Cafe	no
+predinner	boxcar-social-laneway	Boxcar Social Laneway	no
+predinner	bricolage-bakery	Bricolage Bakery	no
+predinner	buno-coffee	Buno Coffee	no
+predinner	buvette-pacey	Buvette Pacey	no
+predinner	cabin-fever	Cabin Fever	no
+predinner	cocktail-bar	Cocktail Bar	no
+predinner	ethica-coffee-roasters	Ethica Coffee Roasters	no
+predinner	fahrenheit-coffee	Fahrenheit Coffee	no
+predinner	fika-cafe	FIKA Cafe	no
+predinner	fleur-du-jour	Fleur du Jour	no
+predinner	flora-lounge	Flora Lounge	no
+predinner	forget-me-not-cafe	Forget Me Not Cafe	no
+predinner	forno-cultura	Forno Cultura	no
+predinner	get-well	Get Well	no
+predinner	grey-tiger	Grey Tiger	no
+predinner	harbord-bakery	Harbord Bakery	no
+predinner	harry-and-heels-california-donuts	Harry and Heels California Donuts	no
+predinner	issho-bakery	Issho Bakery	no
+predinner	krave-coffee	Krave Coffee	no
+predinner	kream-dessert	Kream Dessert	no
+predinner	lait-night	Lait Night	no
+predinner	le-gourmand	Le Gourmand	no
+predinner	left-field-brewery	Left Field Brewery	no
+predinner	liu-loqum-atelier	Liu Loqum Atelier	no
+predinner	machino-donuts	MACHINO DONUTS	no
+predinner	maven-toronto	Maven Toronto	no
+predinner	moments	Moments	no
+predinner	moss-park-espresso	Moss Park Espresso	no
+predinner	nabulu-coffee	Nabulu Coffee	no
+predinner	new-retro-basement-bar	New Retro Basement Bar	no
+predinner	noctua-bakery	Noctua Bakery	no
+predinner	purple-penguin-cafe	Purple Penguin Cafe	no
+predinner	rorschach-brewing-co	Rorschach Brewing Co.	no
+predinner	short-turn	Short Turn	no
+predinner	soul-chocolate	Soul Chocolate	no
+predinner	supernova-coffee	SUPERNOVA Coffee	no
+predinner	the-black-canary-espresso-bar	The Black Canary Espresso Bar	no
+predinner	the-local	The Local	no
+predinner	the-maker-bean-cafe	The Maker Bean Cafe	no
+predinner	the-mugshot-tavern	The Mugshot Tavern	no
+predinner	the-nutrition-bar	The Nutrition Bar	no
+predinner	the-wren	The Wren	no
+predinner	tiny-market-co	Tiny Market Co	no
+predinner	tre-mari-bakery	Tre Mari Bakery	no
+predinner	tsuchi-cafe	Tsuchi Cafe	no
+predinner	wasted-youth-bar	Wasted Youth Bar	no
+predinner	writers-room-bar	Writers Room Bar	no
+dinner	bar-vendetta	Bar Vendetta	yes
+dinner	416-snack-bar	416 Snack Bar	no
+dinner	aera	Aera	no
+dinner	alder	Alder	no
+dinner	aura	Aura	no
+dinner	avelo-restaurant	Avelo Restaurant	no
+dinner	bar-isabel	Bar Isabel	no
+dinner	carmelitas-restaurant	Carmelitas Restaurant	no
+dinner	casa-madera	Casa Madera	no
+dinner	casamiento	Casamiento	no
+dinner	contrada	Contrada	no
+dinner	convivium-dining-community	Convivium Dining Community	no
+dinner	dailo	DaiLo	no
+dinner	descendant-detroit-style-pizza	Descendant Detroit Style Pizza	no
+dinner	el-pocho-antojitos-bar	El Pocho Antojitos Bar	no
+dinner	enoteca-sociale	Enoteca Sociale	no
+dinner	gonzo-izakaya	Gonzo Izakaya	no
+dinner	kasa-moto	Kasa Moto	no
+dinner	kiin	Kiin	no
+dinner	koh-lipe-thai-kitchen	Koh Lipe Thai Kitchen	no
+dinner	konia-kitchen-and-bar	Konia Kitchen and Bar	no
+dinner	little-sister-dutch-indonesian	Little Sister Dutch Indonesian	no
+dinner	monte-bianco	Monte Bianco	no
+dinner	quanto-basta-restaurant	Quanto Basta Restaurant	no
+dinner	r-d	R&D	no
+dinner	raku	Raku	no
+dinner	richmond-station	Richmond Station	no
+dinner	signatures-restaurant	Signatures Restaurant	no
+dinner	soos	Soos	no
+dinner	souper-hot-pot	Souper Hot Pot	no
+dinner	tabule-middle-eastern-cuisine	Tabule Middle Eastern Cuisine	no
+dinner	tenon-vegan-sushi	Tenon Vegan Sushi	no
+dinner	thairoom-college	Thairoom College	no
+dinner	viaggio	Viaggio	no
+dinner	vit-beo	Vit Beo	no
