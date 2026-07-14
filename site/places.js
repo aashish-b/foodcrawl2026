@@ -986,5 +986,12 @@ const PLACES = [
   "lat": 43.64517,
   "lng": -79.39571,
   "cat": "sweets"
+ },
+ {
+  "id": "bang-bang-ice-cream",
+  "name": "Bang Bang Ice Cream",
+  "lat": 43.64634,
+  "lng": -79.41937,
+  "cat": "sweets"
  }
 ];

@@ -70,6 +70,8 @@ EXTRA = [
     {"name": "Harry's Charbroiled (Waterworks)", "lat": 43.64673, "lng": -79.39923, "cat": "food"},
     # King West location (Sun 11-6); the Distillery one is far east of the route
     {"name": "SOMA Chocolatemaker", "lat": 43.64517, "lng": -79.39571, "cat": "sweets"},
+    # 93A Ossington Ave, Sun 12-11 — ice cream sandwiches
+    {"name": "Bang Bang Ice Cream", "lat": 43.64634, "lng": -79.41937, "cat": "sweets"},
 ]
 
 def slug(name):
