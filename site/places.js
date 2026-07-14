@@ -979,5 +979,12 @@ const PLACES = [
   "lat": 43.64673,
   "lng": -79.39923,
   "cat": "food"
+ },
+ {
+  "id": "soma-chocolatemaker",
+  "name": "SOMA Chocolatemaker",
+  "lat": 43.64517,
+  "lng": -79.39571,
+  "cat": "sweets"
  }
 ];

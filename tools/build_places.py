@@ -68,6 +68,8 @@ RENAMES = {"Snack Bar": "416 Snack Bar"}
 # not in the original collection — added for the crawl reveal phases
 EXTRA = [
     {"name": "Harry's Charbroiled (Waterworks)", "lat": 43.64673, "lng": -79.39923, "cat": "food"},
+    # King West location (Sun 11-6); the Distillery one is far east of the route
+    {"name": "SOMA Chocolatemaker", "lat": 43.64517, "lng": -79.39571, "cat": "sweets"},
 ]
 
 def slug(name):
