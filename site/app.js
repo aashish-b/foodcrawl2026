@@ -122,10 +122,18 @@ const CAT_ICON = { cafe: "☕", bakery: "🥐", sweets: "🍧", food: "🍜", ba
 const CAT_NAME = { cafe: "café", bakery: "bakery", sweets: "sweets", food: "restaurant", bar: "bar" };
 
 /* ---------- state ---------- */
-const KEY = "crawl-2026-07-19";
+// rehearsal keeps its own store so dry runs never bleed into the real day
+const KEY = REHEARSAL ? "crawl-2026-07-19-rehearsal" : "crawl-2026-07-19";
 const byId = Object.fromEntries(PLACES.map(p => [p.id, p]));
 let state = { visited: {}, history: [] };
 try { state = Object.assign(state, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
+// stamps are clock-gated, so real-mode stamps before the opening gate can only
+// be leftovers from old dry runs — start clean (?reset also wipes by hand)
+if ((!REHEARSAL && Date.now() < GATES.start && Object.keys(state.visited).length) ||
+    new URLSearchParams(location.search).has("reset")) {
+  state = { visited: {}, history: [] };
+  localStorage.setItem(KEY, JSON.stringify(state));
+}
 const save = () => localStorage.setItem(KEY, JSON.stringify(state));
 
 const phaseDone = ph => ph.options.some(o => state.visited[o.id]);
