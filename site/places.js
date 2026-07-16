@@ -993,5 +993,12 @@ const PLACES = [
   "lat": 43.64634,
   "lng": -79.41937,
   "cat": "sweets"
+ },
+ {
+  "id": "mac-s-pizza",
+  "name": "Mac's Pizza",
+  "lat": 43.66166,
+  "lng": -79.42947,
+  "cat": "food"
  }
 ];

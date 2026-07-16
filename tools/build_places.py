@@ -72,6 +72,8 @@ EXTRA = [
     {"name": "SOMA Chocolatemaker", "lat": 43.64517, "lng": -79.39571, "cat": "sweets"},
     # 93A Ossington Ave, Sun 12-11 — ice cream sandwiches
     {"name": "Bang Bang Ice Cream", "lat": 43.64634, "lng": -79.41937, "cat": "sweets"},
+    # 759 Dovercourt Rd, Sun 12-11
+    {"name": "Mac's Pizza", "lat": 43.66166, "lng": -79.42947, "cat": "food"},
 ]
 
 def slug(name):
