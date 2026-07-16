@@ -31,7 +31,7 @@ const PHASES = [
     }]},
   { key: "lunch", num: 3, label: "stop three · the lunch reveal", when: "from 2:00 pm",
     stampAfter: GATES.lunch, gateLabel: "2:00 pm",
-    teaser: "sealed ✉ — stamp Old School and Tochal to reveal the lunch spots",
+    teaser: "sealed ✉ — stamp your first stop to reveal the lunch spots",
     options: [
       { id: "sugo", note: "Riotous red-sauce Italian-American — the eggplant parm of legend. Cash or debit only!",
         hours: "sun 11:30 am – 9 pm", reso: { level: "walkin", text: "no reservations" } },
@@ -140,7 +140,7 @@ const phaseDone = ph => ph.options.some(o => state.visited[o.id]);
 function phaseRevealed(ph) {
   switch (ph.key) {
     case "one": case "two": return true;
-    case "lunch":     return !!(state.visited["old-school"] && state.visited["tochal"]);
+    case "lunch":     return !!(state.visited["old-school"] || state.visited["tochal"]);
     case "predinner": return phaseDone(PHASES[2]);
     case "dinner":    return phaseDone(PHASES[3]);
   }
